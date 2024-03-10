@@ -18,7 +18,6 @@ namespace ChatBotYandexGPT
             var modelUri = "";
             var url = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion";
             var apiKey = "";
-            
             string l = "";
            
             while (true)
