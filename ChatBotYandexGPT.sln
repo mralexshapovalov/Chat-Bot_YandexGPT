@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatBotYandexGPT", "ChatBotYandexGPT\ChatBotYandexGPT.csproj", "{79B75E25-C15B-4978-9D8D-18991101FF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBotYandexGPT", "ChatBotYandexGPT\ChatBotYandexGPT.csproj", "{79B75E25-C15B-4978-9D8D-18991101FF90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFChatBotYandexGPT", "WPFChatBotYandexGPT\WPFChatBotYandexGPT.csproj", "{64589F95-BBF9-4760-9D25-E3B456C20557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{79B75E25-C15B-4978-9D8D-18991101FF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B75E25-C15B-4978-9D8D-18991101FF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B75E25-C15B-4978-9D8D-18991101FF90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64589F95-BBF9-4760-9D25-E3B456C20557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64589F95-BBF9-4760-9D25-E3B456C20557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64589F95-BBF9-4760-9D25-E3B456C20557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64589F95-BBF9-4760-9D25-E3B456C20557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
