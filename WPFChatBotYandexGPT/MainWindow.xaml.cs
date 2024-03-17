@@ -31,7 +31,7 @@ namespace WPFChatBotYandexGPT
         {
             var prompt = new
             {
-                modelUri = "",
+                modelUri = "gpt://b1gnhp30ce0i8c5b3l7d/yandexgpt-lite",
                 completionOptions = new
                 {
                     stream = false,
@@ -57,7 +57,7 @@ namespace WPFChatBotYandexGPT
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(TestAsync());
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Api-Key", "");
+                httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Api-Key", "AQVNyJEC3OglIiOsUXafvwK0oQdOfKkdhYOLPEhH");
                 var response = await httpClient.PostAsync("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", content);
                 var result = await response.Content.ReadAsStringAsync();
 
@@ -72,14 +72,9 @@ namespace WPFChatBotYandexGPT
             string result = await GettingData();
             result = result.Replace("{\"result\":{\"alternatives\":[{\"message\":{\"role\":\"assistant\",\"text\":\"", String.Empty);
             result = result.Substring(0, result.IndexOf("\"}"));
-            TextBlockMain.Text ="Вопрос :"+ question + "Ответ : " + result;
+            TextBlockMain.Text = question + "Ответ : " + result;
             TextBoxEnteringText.Text = string.Empty;
     
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RequestText();
         }
 
         private void TextBoxEnteringText_KeyDown(object sender, KeyEventArgs e)
@@ -88,6 +83,12 @@ namespace WPFChatBotYandexGPT
             {
                 RequestText();
             }
+        }
+
+
+        private void ButtonEnterClick_Click(object sender, RoutedEventArgs e)
+        {
+            RequestText();
         }
     }
 }
