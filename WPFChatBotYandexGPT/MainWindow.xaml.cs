@@ -68,11 +68,16 @@ namespace WPFChatBotYandexGPT
 
         private async void RequestText()
         {
-            string question = "Вопрос :" + TextBoxEnteringText.Text;
+            string question = "Вопрос : " + TextBoxEnteringText.Text;
+            
+
             string result = await GettingData();
             result = result.Replace("{\"result\":{\"alternatives\":[{\"message\":{\"role\":\"assistant\",\"text\":\"", String.Empty);
             result = result.Substring(0, result.IndexOf("\"}"));
-            TextBlockMain.Text = question + "Ответ : " + result;
+
+            string K = question + Environment.NewLine +  "Ответ : " + result;
+            K = K.Replace(@"\n", Environment.NewLine);
+            TextBlockMain.Text = K;
             TextBoxEnteringText.Text = string.Empty;
     
         }
