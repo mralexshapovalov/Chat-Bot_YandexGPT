@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="Image\Alice.png" />
+    <None Remove="Image\YG.png" />
+    <None Remove="Image\YGD_processed.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,8 @@
 
   <ItemGroup>
     <Resource Include="Image\Alice.png" />
+    <Resource Include="Image\YG.png" />
+    <Resource Include="Image\YGD_processed.png" />
   </ItemGroup>
 
 </Project>

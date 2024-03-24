@@ -6,22 +6,48 @@
         xmlns:local="clr-namespace:WPFChatBotYandexGPT"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WPFChatBotYandexGPT.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="744" Width="820">
+        Title="Yandex GPT Bot" Height="744" Width="840">
     <Grid Margin="0,0,0,-16">
-        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText" Margin="38,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="622" Height="161" KeyDown="TextBoxEnteringText_KeyDown"/>
-        <TextBlock HorizontalAlignment="Left" Margin="38,37,0,0" TextWrapping="Wrap" x:Name="TextBlockMain"  VerticalAlignment="Top" Height="482" Width="684" Background="#FFC5BCBC"/>
-        <Button x:Name="ButtonEnterClic" HorizontalAlignment="Left" Margin="660,542,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Height="161" Width="123">
-            <Image Source="/Image/Alice.png" Width="118" Height="155" RenderTransformOrigin="0.5,0.5" OpacityMask="Black">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="0.001"/>
-                        <RotateTransform Angle="0.066"/>
-                        <TranslateTransform Y="0.002"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-        </Button>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9E25FE" Offset="0.396"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FF6C2EEB" Offset="0.161"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText" Text="Напиши мне" FontSize="16" Margin="38,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="622" Height="87" KeyDown="TextBoxEnteringText_KeyDown">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="0"/>
+                    <GradientStop Color="#FF6426FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox x:Name="TextBoxMain" HorizontalAlignment="Left" Margin="38,98,0,0" FontSize="16" TextWrapping="Wrap" ScrollBar.Scroll="TextBoxMain_Scroll" VerticalAlignment="Top" Width="745" Height="426">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Image Source="/Image/YGD_processed.png" HorizontalAlignment="Left" Height="65" Margin="24,30,0,0" VerticalAlignment="Top" Width="202"/>
+        <Image Margin="665,592,57,37" Source="/Image/Alice.png" Stretch="Fill" RenderTransformOrigin="0.516,0.491" MouseLeftButtonDown="Image_MouseLeftButtonDown" >
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="0" Color="Blue" Opacity="1" BlurRadius="20"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+                   
 
     </Grid>
 </Window>

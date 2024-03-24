@@ -31,7 +31,7 @@ namespace WPFChatBotYandexGPT
         {
             var prompt = new
             {
-                modelUri = "gpt://b1gnhp30ce0i8c5b3l7d/yandexgpt-lite",
+                modelUri = "gpt://b1gnhp30ce0i8c5b3l7d/yandexgpt/latest",
                 completionOptions = new
                 {
                     stream = false,
@@ -77,7 +77,7 @@ namespace WPFChatBotYandexGPT
 
             string K = question + Environment.NewLine +  "Ответ : " + result;
             K = K.Replace(@"\n", Environment.NewLine);
-            TextBlockMain.Text = K;
+            TextBoxMain.Text = K;
             TextBoxEnteringText.Text = string.Empty;
     
         }
@@ -91,7 +91,17 @@ namespace WPFChatBotYandexGPT
         }
 
 
-        private void ButtonEnterClick_Click(object sender, RoutedEventArgs e)
+        private void TextBoxMain_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
+
+        private void Image_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             RequestText();
         }
