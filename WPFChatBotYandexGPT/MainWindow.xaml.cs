@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatBotYandexGPT_WPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -104,6 +105,13 @@ namespace WPFChatBotYandexGPT
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             RequestText();
+        }
+
+        private void buttonAddKey(object sender, RoutedEventArgs e)
+        {
+            AddKeyWindow addKeyWindow = new AddKeyWindow();
+            addKeyWindow.Show();
+
         }
     }
 }

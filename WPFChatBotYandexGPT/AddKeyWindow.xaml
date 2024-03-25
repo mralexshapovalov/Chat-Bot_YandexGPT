@@ -1,0 +1,22 @@
+﻿<Window x:Class="ChatBotYandexGPT_WPF.AddKeyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatBotYandexGPT_WPF"
+        mc:Ignorable="d"
+        Title="AddKeyWindow" Height="262" Width="559">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="197*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Вставть индитификатор каталога:" HorizontalAlignment="Left" Margin="8,58,0,0" VerticalAlignment="Top" Width="194" Grid.ColumnSpan="2"/>
+        <Label Grid.Column="1" Content="Вставьте API ключ:" HorizontalAlignment="Left" Margin="73,118,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="323,213,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="436,213,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="194,63,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="337" Height="26"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="194,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="337" Height="26"/>
+
+    </Grid>
+</Window>
