@@ -5,18 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatBotYandexGPT_WPF"
         mc:Ignorable="d"
-        Title="AddKeyWindow" Height="262" Width="559">
+        Title="AddKeyWindow" Height="295" Width="580">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9E25FE" Offset="1"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF5200F9" Offset="1"/>
+                <GradientStop Color="#FFD096FE" Offset="0.802"/>
+                <GradientStop Color="#FFC175FE" Offset="0.974"/>
+                <GradientStop Color="#FFA536FE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="562*"/>
+            <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Вставть индитификатор каталога:" HorizontalAlignment="Left" Margin="8,58,0,0" VerticalAlignment="Top" Width="194" Grid.ColumnSpan="2"/>
-        <Label Grid.Column="1" Content="Вставьте API ключ:" HorizontalAlignment="Left" Margin="73,118,0,0" VerticalAlignment="Top" Width="116"/>
-        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="323,213,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
-        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="436,213,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="194,63,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="337" Height="26"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="194,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="337" Height="26"/>
+        <Label Content="Вставть индитификатор каталога:" HorizontalAlignment="Left" Margin="1,63,0,0" VerticalAlignment="Top" Width="200" Height="26" FontFamily="Arial" Grid.Column="1"/>
+        <Label Grid.Column="1" Content="Вставьте API ключ:" HorizontalAlignment="Left" Margin="83,123,0,0" VerticalAlignment="Top" Width="116" Height="26" FontFamily="Arial"/>
+        <Button x:Name="buttonSave" Grid.Column="1" Content="Сохранить" HorizontalAlignment="Left" Margin="362,213,0,0" VerticalAlignment="Top" Width="85" Height="23" FontFamily="Arial" Background="#FFFFFDFD" Click="buttonSave_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+
+            </Button.BorderBrush>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonCancle" Grid.Column="1" Content="Отмена" HorizontalAlignment="Left" Margin="452,213,0,0" VerticalAlignment="Top" Width="79" Height="23" FontFamily="Arial" Background="#FFFFFBFB">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox x:Name="textboxInsertCatalogIdentifier" Grid.Column="1" HorizontalAlignment="Left" Margin="204,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Height="26" SelectionBrush="#FF6900D7">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="textboxInsertAPIKey" Grid.Column="1" HorizontalAlignment="Left" Margin="204,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" Height="26" SelectionBrush="#FF6900D7">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="buttonDeleteCurrentKey" Grid.Column="1" Content="Удалить текщий ключ" HorizontalAlignment="Left" Margin="399,10,0,0" VerticalAlignment="Top" Width="142" Height="23" FontFamily="Arial" Background="White" >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E25FE" Offset="1"/>
+                    <GradientStop Color="#FF6B26FF" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

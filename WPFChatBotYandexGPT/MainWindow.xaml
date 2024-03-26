@@ -16,7 +16,7 @@
                 <GradientStop Color="#FF9F28FE" Offset="0.831"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText" Text="Напиши мне" FontSize="16" Margin="38,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="622" Height="87" KeyDown="TextBoxEnteringText_KeyDown">
+        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText" Text="Напиши мне" FontSize="16" Margin="38,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="649" Height="56" KeyDown="TextBoxEnteringText_KeyDown">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9E25FE" Offset="0"/>
@@ -42,7 +42,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Image Source="/Image/Alice.png" Stretch="Fill" HorizontalAlignment="Left" Height="87" Margin="676,592,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.516,0.491" MouseLeftButtonDown="Image_MouseLeftButtonDown" >
+        <Image Source="/Image/Alice.png" Stretch="Fill" HorizontalAlignment="Left" Height="88" Margin="687,576,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.516,0.491" MouseLeftButtonDown="Image_MouseLeftButtonDown" >
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
@@ -64,7 +64,11 @@
                     <GradientStop Color="#FF6B26FF" Offset="0"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
-
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
         </Button>
 
     </Grid>
