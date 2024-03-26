@@ -26,21 +26,15 @@ namespace ChatBotYandexGPT_WPF
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            
                 if(textboxInsertAPIKey.Text != string.Empty && textboxInsertCatalogIdentifier.Text != string.Empty)
                 {
     
                     MessageBox.Show("Данные успешно сохранены!","Сообщение",MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-            }
-            catch(Exception ex) 
-            {
-
-                MessageBox.Show(ex.Message);
-            }
             
-
+            
+   
         }
     }
 }
