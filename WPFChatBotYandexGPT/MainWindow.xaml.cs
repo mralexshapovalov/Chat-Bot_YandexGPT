@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WPFChatBotYandexGPT
 {
@@ -26,6 +27,8 @@ namespace WPFChatBotYandexGPT
         public MainWindow()
         {
             InitializeComponent();
+            TextBoxEnteringText.Text = "Напиши мне...";
+            TextBoxEnteringText.Foreground = new SolidColorBrush(Colors.Gray);
         }
 
         private object TestAsync()
@@ -71,34 +74,21 @@ namespace WPFChatBotYandexGPT
         {
             string question = "Вопрос : " + TextBoxEnteringText.Text;
             
-
             string result = await GettingData();
             result = result.Replace("{\"result\":{\"alternatives\":[{\"message\":{\"role\":\"assistant\",\"text\":\"", String.Empty);
             result = result.Substring(0, result.IndexOf("\"}"));
 
-            string K = question + Environment.NewLine +  "Ответ : " + result;
+            string K = result;
+            //+"Ответ : " + result;
             K = K.Replace(@"\n", Environment.NewLine);
-            TextBoxMain.Text = K;
+            listBoxItemTextMain.Items.Add(question);
+            listBoxItemTextMain.Items.Add(K);
             TextBoxEnteringText.Text = string.Empty;
-    
-        }
-
-        private void TextBoxEnteringText_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
+            if (listBoxItemTextMain.SelectedItems.Count % 2 == 0)
             {
-                RequestText();
+                listBoxItemTextMain.Background = new SolidColorBrush(Colors.Brown);
+                
             }
-        }
-
-
-        private void TextBoxMain_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
-        }
-
-        private void Image_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
 
         }
 
@@ -111,7 +101,33 @@ namespace WPFChatBotYandexGPT
         {
             AddKeyWindow addKeyWindow = new AddKeyWindow();
             addKeyWindow.Show();
+        }
 
+        private void TextBoxEnteringText_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxEnteringText.Text == "Напиши мне...")
+            {
+                TextBoxEnteringText.Clear();
+                TextBoxEnteringText.Foreground = new SolidColorBrush(Colors.Black);
+
+            }
+        }
+
+        private void TextBoxEnteringText_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RequestText();
+            }
+        }
+
+        private void listBoxItemTextMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(listBoxItemTextMain.SelectedItems.Count % 2 == 0)
+            {
+                listBoxItemTextMain.Background = new SolidColorBrush(Colors.Brown);
+            }
         }
     }
+
 }

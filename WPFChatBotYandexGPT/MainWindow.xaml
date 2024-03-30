@@ -8,6 +8,10 @@
         mc:Ignorable="d"
         Title="Yandex GPT Bot" Height="744" Width="840" ResizeMode="NoResize">
     <Grid Margin="0,0,0,-16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF9E25FE" Offset="0.932"/>
@@ -16,7 +20,7 @@
                 <GradientStop Color="#FF9F28FE" Offset="0.831"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText" Text="Напиши мне" FontSize="16" Margin="38,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="649" Height="56" KeyDown="TextBoxEnteringText_KeyDown">
+        <TextBox HorizontalAlignment="Left" x:Name="TextBoxEnteringText"  FontSize="16" Margin="38,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="649" Height="56" GotFocus="TextBoxEnteringText_GotFocus" Padding="5" Grid.ColumnSpan="2" KeyDown="TextBoxEnteringText_KeyDown_1">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9E25FE" Offset="0"/>
@@ -29,7 +33,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="TextBoxMain" HorizontalAlignment="Left" Margin="38,98,0,0" FontSize="16" TextWrapping="Wrap" ScrollBar.Scroll="TextBoxMain_Scroll" VerticalAlignment="Top" Width="745" Height="426"  >
+        <TextBox x:Name="TextBoxMain" HorizontalAlignment="Left" Margin="38,474,0,0" FontSize="16" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"  VerticalAlignment="Top" Width="756" Height="90" Padding="5" Grid.ColumnSpan="2"  >
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9E25FE" Offset="1"/>
@@ -42,7 +46,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Image Source="/Image/Alice.png" Stretch="Fill" HorizontalAlignment="Left" Height="88" Margin="687,576,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.516,0.491" MouseLeftButtonDown="Image_MouseLeftButtonDown" >
+        <Image Source="/Image/Alice.png" Stretch="Fill" HorizontalAlignment="Left" Height="88" Margin="186,576,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.516,0.491" MouseLeftButtonDown="Image_MouseLeftButtonDown" Grid.Column="1" >
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
@@ -57,7 +61,7 @@
                 </Style>
             </Image.Style>
         </Image>
-        <Button Content="Добавить ключ" HorizontalAlignment="Left" Margin="698,28,0,0" VerticalAlignment="Top" Width="106" Background="White" Height="25" Click="buttonAddKey" >
+        <Button Content="Добавить ключ" HorizontalAlignment="Left" Margin="186,28,0,0" VerticalAlignment="Top" Width="106" Background="White" Height="25" Click="buttonAddKey" Grid.Column="1" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9E25FE" Offset="1"/>
@@ -70,6 +74,7 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <ListBox x:Name="listBoxItemTextMain" Margin="38,64,46,275" Grid.ColumnSpan="2" SelectionChanged="listBoxItemTextMain_SelectionChanged"/>
 
     </Grid>
 </Window>
