@@ -81,14 +81,10 @@ namespace WPFChatBotYandexGPT
             string K = result;
             //+"Ответ : " + result;
             K = K.Replace(@"\n", Environment.NewLine);
-            listBoxItemTextMain.Items.Add(question);
-            listBoxItemTextMain.Items.Add(K);
+            ListViewMainText.Items.Add(question);
+            ListViewMainText.Items.Add(K);
             TextBoxEnteringText.Text = string.Empty;
-            if (listBoxItemTextMain.SelectedItems.Count % 2 == 0)
-            {
-                listBoxItemTextMain.Background = new SolidColorBrush(Colors.Brown);
-                
-            }
+        
 
         }
 
@@ -121,13 +117,7 @@ namespace WPFChatBotYandexGPT
             }
         }
 
-        private void listBoxItemTextMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(listBoxItemTextMain.SelectedItems.Count % 2 == 0)
-            {
-                listBoxItemTextMain.Background = new SolidColorBrush(Colors.Brown);
-            }
-        }
+        
     }
 
 }

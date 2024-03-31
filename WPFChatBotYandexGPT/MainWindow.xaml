@@ -74,7 +74,13 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <ListBox x:Name="listBoxItemTextMain" Margin="38,64,46,275" Grid.ColumnSpan="2" SelectionChanged="listBoxItemTextMain_SelectionChanged"/>
+        <ListView x:Name="ListViewMainText" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,68,46,275" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
